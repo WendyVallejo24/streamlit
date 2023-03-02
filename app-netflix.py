@@ -22,14 +22,6 @@ data_load_state.text('Done! (using st.cache)')
 st.dataframe(data)
 
 sidebar=st.sidebar
-agree=sidebar.checkbox("Deseas ver los films recuperados?")
-if agree:
-    load_data(500)
-
-sidebar.markdown("DATA_URL")
-
-title=sidebar.text_input("Ingresa el titulo de un pelicula")
-agree=sidebar.button
 
 @st.cache
 def load_data_byname(name):
