@@ -11,8 +11,8 @@ st.sidebar.write("S20006733")
 
 @st.cache
 def load_data(nrows):
-    doc = codecs.open(DATA_URL,'rU','latin1')
-    data = pd.read_csv(doc, nrows=nrows)
+    DATA_URL = codecs.open('movies.csv','rU','latin1')
+    data = pd.read_csv(DATA_URL, nrows=nrows)
     return data
 
 data_load_state = st.text('Cargando...')
@@ -25,6 +25,7 @@ sidebar=st.sidebar
 agree=sidebar.checkbox("Deseas ver los films recuperados?")
 if agree:
     load_data(500)
+sidebar.markdown(DATA_URL)
 
 @st.cache
 def load_data_byname(name):
