@@ -22,6 +22,9 @@ data_load_state.text('Done! (using st.cache)')
 st.dataframe(data)
 
 sidebar=st.sidebar
+agree=sidebar.checkbox("Deseas ver los films recuperados?")
+if agree:
+    load_data(500)
 
 @st.cache
 def load_data_byname(name):
