@@ -25,7 +25,6 @@ sidebar=st.sidebar
 agree=sidebar.checkbox("Deseas ver los films recuperados?")
 if agree:
     load_data(500)
-sidebar.markdown(DATA_URL)
 
 @st.cache
 def load_data_byname(name):
