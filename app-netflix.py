@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import codecs
 
-DATA_URL = ('movies.csv')
+DATA_URL = codecs.open('movies.csv', 'rU', 'latin1')
 
 st.title('Netflix app')
 st.sidebar.image('logo.jpg')
