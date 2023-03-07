@@ -20,9 +20,8 @@ def load_data(nrows):
 data_load_state = st.text('Cargando...')
 data = load_data(500)
 data_load_state.text('Done! (using st.cache)')
-st.dataframe(data)
 
 st.header("Dataset")
 agree = st.sidebar.checkbox("show DataSet Overview ? ")
 if agree:
-  load_data(500)
+  st.dataframe(data)
