@@ -8,8 +8,7 @@ DATE_COLUMN = 'started_at'
 
 st.title('Cicle Ride in New York')
 st.sidebar.image('credencial.jpg')
-st.sidebar.write('Correo Electronico')
-st.sidebar.write('zS20006733@estudiantes.uv.mx')
+st.sidebar.write('Correo Electronico: zS20006733@estudiantes.uv.mx')
 st.sidebar.write("Wendy Belén Vallejo Patraca")
 st.sidebar.write("S20006733")
 
