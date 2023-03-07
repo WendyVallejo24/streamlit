@@ -2,7 +2,6 @@ import pandas as pd
 import streamlit as st
 import codecs
 import numpy as np
-import matplotlib.pyplot as plt
 
 DATA_URL = 'citibike-tripdata.csv'
 DATE_COLUMN = 'started_at'
@@ -28,10 +27,8 @@ agree = st.sidebar.checkbox("Show row data ")
 if agree:
   st.dataframe(data)
 
-fig, ax = plt.subplots()
-ax.hist(data['class'])
-st.header("Histograma del Numero de recorridos por hora")
-agree = st.sidebar.checkbox("Numero de recorridos")
-st.pyplot(fig)
-st.markdown("___")
-st.dataframe(data)
+if st.sidebar.checkbox('Recorridos por hora'):
+    st.subheader('Histograma de Numero de recorridos por hora')
+
+    hist_values = np.histogram(data[DATE_COLUMN].dt.hour, bins=24, range=(0,24))[0]
+    st.bar_chart(hist_values)
