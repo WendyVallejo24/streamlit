@@ -25,4 +25,4 @@ st.dataframe(data)
 st.header("Dataset")
 agree = st.sidebar.checkbox("show DataSet Overview ? ")
 if agree:
-  st.dataframe(DATA_URL)
+  load_data(500)
