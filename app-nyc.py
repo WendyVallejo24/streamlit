@@ -1,6 +1,8 @@
 import pandas as pd
 import streamlit as st
 import codecs
+import numpy as np
+import matplotlib.pyplot as plt
 
 DATA_URL = 'citibike-tripdata.csv'
 DATE_COLUMN = 'started_at'
@@ -22,6 +24,14 @@ data = load_data(500)
 data_load_state.text('Done! (using st.cache)')
 
 st.header("Dataset")
-agree = st.sidebar.checkbox("show DataSet Overview ? ")
+agree = st.sidebar.checkbox("Show row data ")
 if agree:
   st.dataframe(data)
+
+fig, ax = plt.subplots()
+ax.hist(data['class'])
+st.header("Histograma del Numero de recorridos por hora")
+agree = st.sidebar.checkbox("Numero de recorridos")
+st.pyplot(fig)
+st.markdown("___")
+st.dataframe(data)
